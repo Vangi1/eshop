@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: E-shop API
+  description: API pre simuláciu e-shopu
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:5000/api
+
+paths:
+  /products:
+    get:
+      summary: Získanie zoznamu produktov
+      responses:
+        200:
+          description: Úspech
+  /orders:
+    post:
+      summary: Vytvorenie novej objednávky
+      responses:
+        201:
+          description: Objednávka vytvorená
+    get:
+      summary: Získanie zoznamu objednávok
+      responses:
+        200:
+          description: Úspech
+  /orders/{id}:
+    delete:
+      summary: Zmazanie objednávky
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Objednávka zmazaná
